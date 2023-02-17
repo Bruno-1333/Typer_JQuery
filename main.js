@@ -1,5 +1,6 @@
 var phrase = $(".phrase").text();
 var numMots = phrase.split(" ").length;
+var tempsRestant = $("#temps-frappe").text;
 
 var longueurPhrase = $("#longueur-phrase");
 longueurPhrase.text(numMots);
@@ -26,6 +27,14 @@ champ.one("focus", function(){
             clearInterval(chronomètreId);
         }
     },1000)
+
+});
+
+$("#recommencer-jeu").click(function(){
+    champ.attr("disabled", false);
+    champ.val("");
+    $("#compteur-mots").text("0");
+    $("#compteur-caracteres").text("0");
 
 });
 
